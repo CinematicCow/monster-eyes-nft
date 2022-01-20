@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.connect-button {
+    @apply border-2 border-solid border-pink-200 text-pink-200 rounded-lg font-bold hover:bg-pink-400 hover:border-pink-400 hover:text-zinc-800 ease-linear duration-100 !important;
+}
