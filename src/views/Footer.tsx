@@ -3,17 +3,11 @@ const Footer = () => {
     return (
         <footer className="p-10 footer bg-base-200 text-base-content footer-center">
             <div className="grid grid-flow-col gap-4">
-                <a href="/" className="link link-hover">
+                <a href="https://ixiono.com/topic/about" className="link link-hover">
                     About us
                 </a>
-                <a href="/" className="link link-hover">
+                <a href="https://ixiono.com/contact" className="link link-hover">
                     Contact
-                </a>
-                <a href="/" className="link link-hover">
-                    Jobs
-                </a>
-                <a href="/" className="link link-hover">
-                    Press kit
                 </a>
             </div>
             <div>
@@ -54,7 +48,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © 2021 - All right reserved by CinematicCow</p>
+                <p>Copyright © 2021 - All right reserved by Ixiono pte ltd.</p>
             </div>
         </footer>
     );

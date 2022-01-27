@@ -164,8 +164,6 @@ export const getCandyMachineState = async (
     const itemsRedeemed = state.itemsRedeemed.toNumber();
     const itemsRemaining = itemsAvailable - itemsRedeemed;
 
-    console.log('=====================', itemsRemaining);
-
     const presale =
         state.data.whitelistMintSettings &&
         state.data.whitelistMintSettings.presale &&

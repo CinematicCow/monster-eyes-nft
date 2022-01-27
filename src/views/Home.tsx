@@ -5,7 +5,7 @@ import Stats from './Stats';
 import Footer from './Footer';
 import Carousel from './carousel';
 import { HomeProps } from '../interfaces';
-import { navbar, mainHero } from '../content';
+import { navbar, hero } from '../content';
 import * as anchor from '@project-serum/anchor';
 import { useWallet } from '@solana/wallet-adapter-react';
 import {
@@ -16,6 +16,7 @@ import {
     CandyMachineAccount,
 } from '../functions/candyMachine';
 import Alert from '../components/Alert';
+import Overview from './Overview';
 
 function Home({ data }: HomeProps) {
     const [isUserMinting, setIsUserMinting] = useState(false);
@@ -25,19 +26,11 @@ function Home({ data }: HomeProps) {
     const [itemsRemaining, setItemsRemaining] = useState(0);
     const [itemPrice, setitemPrice] = useState(0);
 
-    const metadata = [
-        {
-            title: 'Token Name',
-            value: 'MEYE',
-        },
-    ];
-
     const [alert, setAlert] = useState({
         open: false,
         message: '',
         severity: '',
     });
-    // TODO:Timer
 
     const rpcUrl = data.rpcHost;
     const wallet = useWallet();
@@ -145,7 +138,8 @@ function Home({ data }: HomeProps) {
                 data={navbar}
                 address={(anchorWallet && shortenAddress(wallet.publicKey?.toBase58())) || 'Connect Wallet'}
             />
-            <Hero data={mainHero} />
+            <Hero data={hero} />
+            <Overview />
             {/* <Carousel /> */}
             {alert.open ? (
                 <Alert

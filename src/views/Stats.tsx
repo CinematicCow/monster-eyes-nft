@@ -26,7 +26,7 @@ const Stats = (props: StatsProps) => {
                     {
                         // eslint-disable-next-line no-constant-condition
                         props.nftData.itemsAvailable == 0 ? (
-                            <Card value={'Login with your wallet to see'} />
+                            <Card value={'Login with your wallet to see token details and mint'} />
                         ) : (
                             <>
                                 <Card title={'Token Name'} value={'MEYE'} />
@@ -43,11 +43,15 @@ const Stats = (props: StatsProps) => {
             <div className="conatiner flex flex-wrap w-1/2 justify-center items-center ">
                 <div className="container flex flex-col items-center">
                     <NftCard />
-                    <MintButton
-                        candyMachine={props.mintData.candyMachine}
-                        isMinting={props.mintData.isUserMinting}
-                        onMint={props.mintData.onMint}
-                    />
+                    {props.nftData.itemsAvailable == 0 ? (
+                        ''
+                    ) : (
+                        <MintButton
+                            candyMachine={props.mintData.candyMachine}
+                            isMinting={props.mintData.isUserMinting}
+                            onMint={props.mintData.onMint}
+                        />
+                    )}
                 </div>
             </div>
         </div>
